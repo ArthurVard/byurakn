@@ -7,10 +7,15 @@ import           Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+
+
+   -- copy static assets
+    let assets = ["images/*", "CNAME"]
+
+    match (foldr1 (.||.) assets) $ do
         route   idRoute
         compile copyFileCompiler
-
+      
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
