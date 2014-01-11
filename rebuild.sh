@@ -2,5 +2,5 @@
 
 print -- "Compiling and building"
 cabal install && \
-./site clean && \
-./site build
+byurakn.am clean && \
+byurakn.am build
