@@ -1,0 +1,91 @@
+
+body { font-family: 'arian_amuregular', Arian AMU, Arial, Tahoma, Geneva, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'arian_amuregular', Arian AMU, Arial, Tahoma, Geneva, sans-serif; }
+pre, code { font: 13px/1.5 'Oxygen Mono', monospace; }
+
+a:focus { outline: 1px dotted invert; }
+
+hr { border-color: #ccc; border-style: solid; border-width: 1px 0 0; clear: both; height: 0; }
+
+
+h1 { font-size: 32px; }
+h2 { font-size: 23px; }
+h3 { font-size: 21px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
+
+h1, h2, h3, h4, h5, h6 { line-height:1.2em; margin-bottom:.3em; }
+h2 { margin-top:1em; }
+
+.container_16 .grid_16.branding { margin-left: 0; margin-right: 0; width: 100%; }
+.container_16 .grid_16.nav { margin-left: 0; margin-right: 0; width: 100%; }
+.container_16 .grid_16.branding { background-image: url(../images/banner.png); background-repeat: no-repeat; margin:0; padding: 0; width: 100%; }
+h1#branding { font-size: 2em; color:#078; font-weight:bold; text-align:left; padding:.2em .5em; margin-top:.5em; margin-bottom:0; }
+h1#branding a { color: #078; }
+h1#branding a:hover { color: #078; }
+
+#site_info { color:#ccc; background:#666; font: 14px/2 Philosopher, sans-serif;  margin-bottom:5px; margin-top:5px; padding: 5px 10px; }
+#site_info a { color:#fff; }
+#site_info a:hover { color:#000; }
+
+.logo {
+    float:left;
+    height:100px;
+    width:100px;
+    margin-bottom:1px;
+    margin-left:0;
+    margin-right:15px;
+    margin-top:0px;
+    
+}
+
+
+h2#branding {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0.2em 0.5em;
+    text-align: left;
+    //font-size: 24px;
+}
+
+
+.inline-list {
+    list-style:none;
+    margin:0 0 1.0625rem -1.375rem;
+    overflow:hidden;
+    padding:0;
+}
+
+.left {
+    float:left !important;
+}
+
+#footer #menu li {
+    display: inline;
+    list-style-type: none;
+    font-size: 12px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-right: 1px solid #222;
+    padding: 0 10px;
+
+}
+
+#footer #menu li a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 12px;
+    -webkit-transition: all 0.5s ease;
+}
+
+#footer #menu li a:hover {
+    color: #111;
+}
+
+
+.en-text
+{
+font: 14px/2 Philosopher, sans-serif;
+}
