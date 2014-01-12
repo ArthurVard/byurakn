@@ -5,27 +5,34 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Բյուրակն - «Բյուրակն» կրթահամալիր | $title$</title>
-  
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="/favicon.png">
+    
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="shortcut icon" href="/favicon.png"/>
     <link rel="alternate" type="application/rss+xml"  title="byurakn.am" href="/rss.xml" />
-    <link href='http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic|Oxygen+Mono|Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic|Oxygen+Mono|Yanone+Kaffeesatz' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/grid.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/nav.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/jssorslider.css" media="screen" />
   </head>
   <body>
     <div class="container_16">
       $partial("templates/header.html")$
       <div class="clear"></div>
       
+      
+      $partial("templates/slider.html")$
+      <div class="clear"></div>
       $body$
 
       <div class="clear"></div>
       $partial("templates/footer.html")$
     </div>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/jssor.sliderc.mini.js"></script>
+    <script type="text/javascript" src="/js/scripts.js" />
   </body>
 </html>
 

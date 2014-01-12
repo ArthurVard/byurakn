@@ -10,7 +10,7 @@ main = hakyll $ do
 
 
    -- copy static assets
-    let assets = ["images/*", "CNAME"]
+    let assets = ["images/*", "images/slide/*", "js/*",  "images/slide/*/*",   "CNAME"]
 
     match (foldr1 (.||.) assets) $ do
         route   idRoute

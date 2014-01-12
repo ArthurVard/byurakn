@@ -39,7 +39,7 @@ ul.nav li ul li {
 ul.nav li a {
         color:#fff;
         background:#666;
-        font-weight:bold;
+        //font-weight:bold;
         text-decoration:none;
         display:block;
         float:left;

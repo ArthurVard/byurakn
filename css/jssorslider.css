@@ -1,0 +1,88 @@
+
+ .slider1-N div, .slider1-N div:hover, .slider1-N div.av
+            {
+                FILTER: alpha(opacity=70);
+                opacity: .7;
+                overflow:hidden;
+                cursor: pointer;
+                BORDER: #000 1px solid;
+            }
+            .slider1-N div
+            {
+                background-color: gray;
+            }
+            .slider1-N div:hover, .slider1-N div.av:hover, .slider1-N div.hv
+            {
+                background-color: #d3d3d3;
+            }
+            .slider1-N div.av
+            {
+                background-color: #fff;
+            }
+            .slider1-N div.dn
+            {
+                background-color: #555555;
+            }
+
+
+ /* jssor slider direction navigator skin 02 css */
+            /*
+            .jssord02l              (normal)
+            .jssord02r              (normal)
+            .jssord02l:hover        (normal mouseover)
+            .jssord02r:hover        (normal mouseover)
+            .jssord02ldn            (mousedown)
+            .jssord02rdn            (mousedown)
+            */
+            .jssord02l, .jssord02r, .jssord02ldn, .jssord02rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(/images/d02.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssord02l { background-position: -3px -33px; }
+            .jssord02r { background-position: -63px -33px; }
+            .jssord02l:hover { background-position: -123px -33px; }
+            .jssord02r:hover { background-position: -183px -33px; }
+            .jssord02ldn { background-position: -243px -33px; }
+            .jssord02rdn { background-position: -303px -33px; }
+
+<!-- Caption Style -->
+
+ .captionOrange, .captionBlack
+        {
+            color: #fff;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .captionOrange
+        {
+            background: #007788;
+            background-color:  #007788;
+        }
+        .captionBlack
+        {
+        	font-size:16px;
+            background: #000;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        a.captionOrange, A.captionOrange:active, A.captionOrange:visited
+        {
+        	color: #ffffff;
+        	text-decoration: none;
+        }
+        a.captionOrange:hover
+        {
+            color: #eb5100;
+            text-decoration: underline;
+            background-color: #eeeeee;
+            background-color: rgba(238, 238, 238, 0.7);
+        }
+        .bricon
+        {
+            background: url(/image/browser-icons.png);
+        }
