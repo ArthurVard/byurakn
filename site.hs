@@ -1,8 +1,10 @@
+--byurakn.am
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-
+import           System.FilePath.Posix  (  takeBaseName, splitDirectories, (</>)
+                                         , addExtension, replaceExtension, dropExtension)
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -33,6 +35,14 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    let dzernarks = ["pages/dzernark/*", "pages/dzernark/*/*"]
+    match (foldr1 (.||.) dzernarks) $ do
+        route $ customRoute $ (processPagesRoute "dzernark") . toFilePath
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/dzernark.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" baseCtx
+            >>= relativizeUrls
+
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -55,8 +65,7 @@ main = hakyll $ do
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Home"                `mappend`
-                    constField "year"  "2014"                `mappend` 
-                    defaultContext
+                    baseSliderCtx
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
@@ -71,3 +80,22 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+baseCtx :: Context String
+baseCtx =
+    constField "year" "2014" `mappend`
+    defaultContext
+
+baseSliderCtx :: Context String
+baseSliderCtx =
+    constField "withSlider" "true" `mappend`
+    baseCtx
+
+processPagesRoute :: FilePath -> [Char] -> FilePath
+processPagesRoute root path =
+    root </>  year </> (replaceExtension fileName "html")
+         where fileName =  last (splitDirectories path)
+               year | length (splitDirectories path) < 4  = ""
+                    | otherwise = last $ init (splitDirectories path)
+                       
+    
