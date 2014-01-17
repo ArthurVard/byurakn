@@ -22,9 +22,10 @@
       $partial("templates/header.html")$
       <div class="clear"></div>
       
-      
+      $if(withSlider)$
       $partial("templates/slider.html")$
       <div class="clear"></div>
+      $endif$
       $body$
 
       <div class="clear"></div>

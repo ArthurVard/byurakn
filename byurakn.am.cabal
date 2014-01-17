@@ -24,3 +24,4 @@ executable byurakn.am
   -- hs-source-dirs:   
   build-depends:       base >=4.6 && <4.7
                      , hakyll >= 4.4.1 && < 5 
+                     , filepath   >= 1.3

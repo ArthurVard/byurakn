@@ -53,7 +53,7 @@
 
  .captionOrange, .captionBlack
         {
-            color: #fff;
+            color: #47596e;
             font-size: 20px;
             line-height: 30px;
             text-align: center;
@@ -61,23 +61,23 @@
         }
         .captionOrange
         {
-            background: #007788;
-            background-color:  #007788;
+            background: #47596e;
+            background-color:  #fff;
         }
         .captionBlack
         {
         	font-size:16px;
-            background: #000;
-            background-color: rgba(0, 0, 0, 0.4);
+            background: #47596e;
+            background-color: rgba(0, 0, 1, 0.4);
         }
         a.captionOrange, A.captionOrange:active, A.captionOrange:visited
         {
-        	color: #ffffff;
+        	color: #47596e;
         	text-decoration: none;
         }
         a.captionOrange:hover
         {
-            color: #eb5100;
+            color: #253d4a;
             text-decoration: underline;
             background-color: #eeeeee;
             background-color: rgba(238, 238, 238, 0.7);
