@@ -21,9 +21,9 @@ h1, h2, h3, h4, h5, h6 { line-height:1.2em; margin-bottom:.3em; }
 h2 { margin-top:1em; }
 
 .container_16 .grid_16.branding { margin-left: 0; margin-right: 0; width: 100%; }
-.container_16 .grid_16.nav { margin-left: 0; margin-right: 0; width: 100%; }
+.container_16 .grid_16.nav { margin:0; width: 100%; }
 .container_16 .grid_16.branding { background-image: url(../images/banner.png); background-repeat: no-repeat; margin:0; padding: 0; width: 100%; }
-h1#branding { font-size: 2em; color:#47596e; font-weight:bold; text-align:left; padding:.2em .5em; margin-top:.5em; margin-bottom:0; }
+h1#branding { font-size: 2em; color:#fff; font-weight:bold; text-align:left; padding:.2em .5em; margin-top:1.1em; margin-bottom:0; }
 h1#branding a { color: #47596e; }
 h1#branding a:hover { color: #078; }
 
@@ -35,11 +35,7 @@ h1#branding a:hover { color: #078; }
     float:left;
     height:100px;
     width:100px;
-    margin-bottom:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-top:0px;
-    
+    margin:15px;
 }
 
 
@@ -97,7 +93,7 @@ h2#branding {
 /*Side Menu*/
 
 #sideMenu  h5 {
-   
+    
     margin: 0px 0px 10px 0px;
     padding: 0;
 }
@@ -109,7 +105,7 @@ h2#branding {
 }
 
 #sideMenu li {
-   // font: 200 14px/1.5 Arial AMU;
+    // font: 200 14px/1.5 Arial AMU;
     padding:10px 0px 0px 0px;
 }
 
@@ -137,26 +133,26 @@ h2#branding {
 /*dzernark pages style*/
 
 #dzernark p  {
-   font-size: 15px;
-   color: #000;
-   text-align: justify;
-   line-height: 1.5;
-   text-indent: 30px;
-padding: 2px;
-margin-top: 5px;
- 
- }
+    font-size: 15px;
+    color: #000;
+    text-align: justify;
+    line-height: 1.5;
+    text-indent: 30px;
+    padding: 2px;
+    margin-top: 5px;
+    
+}
 
 
 #dzernark ul{
- font-size: 15px;
-   color: #000;
+    font-size: 15px;
+    color: #000;
     display: block;
     list-style-type: disc;
     text-indent:0em;
-margin-left: 30px;
-margin-top: 20px;
-margin-bottom: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 
