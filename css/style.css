@@ -160,3 +160,136 @@ h2#branding {
 
 }
 
+
+#toc.right-toc {
+    float: right;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 0;
+    padding: 0;
+}
+@media screen and (max-width: 600px) {
+#toc.right-toc {
+    float: none;
+    margin-left: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+}
+#toc {
+    margin-top: 10px;
+}
+#toc p {
+    font-weight: bold;
+    margin-top: 0;
+}
+#toc > ol {
+    font-size: 14px;
+    margin-left: 0;
+    margin-top: 5px;
+}
+@media screen and (max-width: 600px) {
+#toc > ol {
+    font-size: 13px;
+}
+}
+#toc ol {
+    counter-reset: item;
+}
+#toc li {
+    display: block;
+    margin-top: 0;
+}
+@media screen and (max-width: 600px) {
+#toc li {
+    line-height: 1.69;
+}
+}
+#toc li:before {
+    content: counters(item, ".", decimal) ". ";
+    counter-increment: item;
+}
+#toc:after {
+    clear: both;
+}
+.footnotes {
+    font-size: 12px;
+    padding: 0 25px;
+}
+@media screen and (max-width: 600px) {
+.footnotes {
+    padding: 0;
+}
+}
+.footnotes a[href^="#fnref"] {
+    font-size: 1em;
+    margin-left: 5px;
+}
+.footnotes p {
+    line-height: 1.67;
+}
+@media screen and (max-width: 600px) {
+.footnotes p {
+    line-height: 1.5;
+}
+}
+.footnotes li {
+    margin-bottom: 5px;
+}
+.footnotes ol {
+    list-style-type: decimal;
+}
+.footnotes li p:last-child {
+    margin-bottom: 0;
+}
+.footnotes hr {
+    background-color: #EFEFEF;
+    height: 1px;
+    margin: 30px auto 20px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.footnotes hr:after {
+    background: none repeat scroll 0 0 #FFFFFF;
+    content: "§";
+    cursor: default;
+    display: inline-block;
+    font-size: 2em;
+    padding: 0 0.25em;
+    position: relative;
+    top: -0.65em;
+}
+hr {
+    background-color: #EFEFEF;
+    border: 0 none;
+    clear: both;
+    color: #CCCCCC;
+    height: 1px;
+    margin: 35px auto;
+    width: 50%;
+}
+#main-nav > ul > li > a {
+    padding: 31px 0 35px;
+    text-transform: lowercase;
+}
+#main-nav > ul > li > a:after {
+    padding-left: 0;
+}
+@media screen and (max-width: 766px) {
+#main-nav > ul > li > a {
+    padding: 16px 0;
+}
+}
+#comment {
+    border-top: 1px solid #EFEFEF;
+    clear: both;
+    padding: 10px 0;
+}
+#content article {
+    padding: 0;
+}
+
+strong {font-weight: bold;
+
+}

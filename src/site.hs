@@ -2,10 +2,11 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
-import           Hakyll
+import           Hakyll hiding (pandocCompiler)
 import           System.FilePath.Posix  (  takeBaseName, splitDirectories, (</>)
                                          , addExtension, replaceExtension, dropExtension)
 
+import           Site.Pandoc
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
@@ -27,29 +28,47 @@ main = hakyll $ do
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ getResourceBody
+            >>= pandocCompiler 
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ getResourceBody
+            >>= pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    let dzernarks = ["pages/dzernark/*", "pages/dzernark/*/*"]
+    let dzernarks = ["pages/dzernark/*/*"]
     match (foldr1 (.||.) dzernarks) $ do
         route $ customRoute $ (processPagesRoute "dzernark") . toFilePath
-        compile $ pandocCompiler
+        compile $ getResourceBody
+            >>= pandocCompiler
             >>= loadAndApplyTemplate "templates/dzernark.html" defaultContext
             >>= loadAndApplyTemplate "templates/base.html" baseCtx
             >>= relativizeUrls
+    match ("pages/dzernark/index.html") $ do
+        route $ customRoute $  (processPagesRoute "dzernark") .  toFilePath
+        compile $ do
+            dzernark2014 <- recentFirst =<< loadAll "pages/dzernark/2014/*"
+            dzernark2013 <- recentFirst =<< loadAll "pages/dzernark/2013/*"
+            let indexCtx = listField "dzernark2014" postCtx (return dzernark2014) `mappend`
+                           listField "dzernark2013" postCtx (return dzernark2013) `mappend`
+                           baseCtx 
+                            
+            getResourceBody
+                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/base.html" indexCtx
+                >>= relativizeUrls
+
 
     let socailEvents = ["pages/events/*/*"]
     match (foldr1 (.||.) socailEvents) $ do
         route $ customRoute $ (processPagesRoute "pages/events") . toFilePath
-        compile $ pandocCompiler
+        compile $ getResourceBody
+            >>= pandocCompiler
             >>= loadAndApplyTemplate "templates/event.html" defaultContext
             >>= loadAndApplyTemplate "templates/base.html" baseCtx
             >>= relativizeUrls        
