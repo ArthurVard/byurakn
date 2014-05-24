@@ -12,7 +12,10 @@ main = hakyll $ do
 
 
    -- copy static assets
-    let assets = ["images/*", "images/slide/*", "js/*",  "images/slide/*/*",   "CNAME"]
+    let assets = ["images/*", "images/slide/*", "js/*", 
+                  "images/slide/*/*",  
+                  "CNAME",
+                  "pages/events/2014/images/*"]
 
     match (foldr1 (.||.) assets) $ do
         route   idRoute
@@ -42,6 +45,14 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/dzernark.html" defaultContext
             >>= loadAndApplyTemplate "templates/base.html" baseCtx
             >>= relativizeUrls
+
+    let socailEvents = ["pages/events/*/*"]
+    match (foldr1 (.||.) socailEvents) $ do
+        route $ customRoute $ (processPagesRoute "pages/events") . toFilePath
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/event.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" baseCtx
+            >>= relativizeUrls        
 
     create ["archive.html"] $ do
         route idRoute
@@ -73,6 +84,17 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler
+
+    match ("pages/events/index.html") $ do
+        route $ customRoute $  (processPagesRoute "events") .  toFilePath
+        compile $ do
+            posts2014 <- recentFirst =<< loadAll "pages/events/2014/*"
+            let indexCtx = listField "posts2014" postCtx (return posts2014) `mappend`
+                           baseCtx  
+            getResourceBody
+                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/base.html" indexCtx
+                >>= relativizeUrls
 
 
 --------------------------------------------------------------------------------

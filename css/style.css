@@ -1,4 +1,8 @@
 
+article .entry-content {
+    line-height: 1.8;
+}
+
 body { font-family: 'arian_amuregular', 'Arian AMU', 'Arial AMU', 'GHEA Grapalat', Sylfaen, sans-serif; }
 h1, h2, h3, h4, h5, h6 { font-family: 'arian_amuregular', 'Arian AMU', 'Arial AMU', 'GHEA Grapalat', Sylfaen, sans-serif; }
 pre, code { font: 13px/1.5 'Oxygen Mono', monospace; }
