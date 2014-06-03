@@ -1,4 +1,4 @@
-
+// www.jssor.com
 .slider1-N div, .slider1-N div:hover, .slider1-N div.av
 {
     FILTER: alpha(opacity=70);
@@ -30,7 +30,7 @@
   .jssord02l              (normal)
   .jssord02r              (normal)
   .jssord02l:hover        (normal mouseover)
-  .jssord02r:hover        (normal mouseover)
+        .jssord02r:hover        (normal mouseover)
   .jssord02ldn            (mousedown)
   .jssord02rdn            (mousedown)
   */
